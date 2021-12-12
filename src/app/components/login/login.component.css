@@ -1,0 +1,116 @@
+
+
+.login-container{
+    background-color: #f8f2f5;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_header{
+    height: 70vh;
+    width: 70%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_header .login_header_left{
+    width: 500px;
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.login_header .login_header_left img{
+    height: 56px;
+    margin-left: 32px;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 32px;
+    width: 500px;
+}
+.login_header_right .login_header_right_card{
+    height: 360px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+}
+.login_header_right_card_content{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input{
+    padding: 20px;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px ;
+}
+::placeholder{
+    font-size: 16px;
+    font-weight: normal;
+}
+.login-button{
+    background-color: #1877f2;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: #1877f2;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.create-account{
+    background-color: #42b72a;
+    display: inline-block;
+    align-self: center;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 15px 38px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.tagline{
+    text-align: center;
+    letter-spacing: 0.7px;
+}
+.login_footer{
+    height: 38vh;
+    align-self: flex-end;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

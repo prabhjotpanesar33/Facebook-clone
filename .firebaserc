@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "facebook-27a73": {
+      "hosting": {
+        "facebook": [
+          "facebook-27a73"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "facebook-27a73"
+  }
+}

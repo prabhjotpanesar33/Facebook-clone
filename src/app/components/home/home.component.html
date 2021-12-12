@@ -1,0 +1,154 @@
+<div class="home-container">
+    <div class="home_header">
+        <div class="header_left">
+            <img src="./assets/fb-head.jpg" alt="logo" mat-card-avatar>
+            <div class="input">
+                <mat-icon class="search-icon">search</mat-icon>
+                <form>
+                    <input type="text" placeholder="Search Facebook">
+                </form>
+            </div>
+        </div>
+        <div class="header_middle">
+            <div class="active">
+                <mat-icon style="color: #1877f2;">home</mat-icon>
+            </div>
+            <div>
+                <mat-icon>ondemand_video</mat-icon>
+            </div>
+            <div>
+                <mat-icon>store</mat-icon>
+            </div>
+            <div>
+                <mat-icon>group</mat-icon>
+            </div>
+            <div>
+                <mat-icon>flag</mat-icon>
+            </div>
+        </div>
+        <div class="header_right">
+            <div>
+                <img [src]="user.avatar" alt="avatar" mat-card-avatar>
+                <span style="margin-left: 5px;" class="name">{{user.firstName || 'Default User'}}</span>
+            </div>
+            <div>
+                <mat-icon>add</mat-icon>
+            </div>
+            <div>
+                <mat-icon matBadge="4" matBadgeColor="primary" matBadgeOverlap="false" matBadgePosition="above after">
+                    forum</mat-icon>
+            </div>
+            <div>
+                <mat-icon matBadge="3" matBadgeColor="warn" matBadgeOverlap="false" matBadgePosition="above after">
+                    notifications</mat-icon>
+            </div>
+        </div>
+
+        <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item  >
+                <mat-icon (click)="logout()">exit_to_app</mat-icon> Logout
+            </button>
+        </mat-menu>
+
+    </div>
+    <div class="home_body">
+        <div class="feed_left">
+            <div class="inside">
+                <div class="user-avatar">
+                    <img alt="" mat-card-avatar [src]="user.avatar">
+                    <span style="font-size: 16px;" class="name">{{user.firstName}} {{user.lastName}}</span>
+                </div>
+                <div>
+                    <mat-icon>local_hospital</mat-icon>
+                    <span class="covid">COVID-19 Information Center</span>
+                </div>
+                <div>
+                    <mat-icon>flag </mat-icon>
+                    <span>Pages</span>
+                </div>
+                <div>
+                    <mat-icon>people</mat-icon>
+                    <span>Friends</span>
+                </div>
+                <div>
+                    <mat-icon>chat</mat-icon>
+                    <span>Messanger</span>
+                </div>
+                <div>
+                    <mat-icon>store</mat-icon>
+                    <span>Marketplace</span>
+                </div>
+                <div>
+                    <mat-icon>video_library</mat-icon>
+                    <span>Videos</span>
+                </div>
+                <div>
+                    <mat-icon class="see-more">expand_more</mat-icon>
+                    <span>See More</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="content_middle">
+            <div class="top_middle">
+                <mat-card *ngFor="let i of images" class="image-card">
+                    <img alt="bg" class="bg" src="{{ i }}">
+                    <mat-card-content>
+                        <img class="avatar" alt="avatar" src="./assets/pexels-photo-1704488.jpeg">
+                        <span class="card-name">Indra Mukherjee</span>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="center_middle">
+                <mat-card class="post-message">
+                    <mat-card-header class="post-message-header"
+                        style="padding-bottom: 20ox; border-bottom: 1px solid lightgray;">
+                        <img alt="" [src]="user.avatar" mat-card-avatar>
+                        <form style="flex: 1;" #form="ngForm" (ngSubmit)="postMessage(form)">
+                            <input style="padding: 10px 20px" class="on-your-mind" name="message" ngModel
+                                placeholder="What's on your mind?" type="text">
+                            <button style="display: none;" type="submit"></button>
+                        </form>
+                    </mat-card-header>
+                    <mat-card-content class="card-body">
+                        <div>
+                            <mat-icon color="accent">videocam</mat-icon>
+                            <span>Live Video</span>
+                        </div>
+                        <div>
+                            <mat-icon color="primary">photo_album</mat-icon>
+                            <span>Live Video</span>
+                        </div>
+                        <div>
+                            <mat-icon color="warn">mood</mat-icon>
+                            <span>Feeling/Activity</span>
+                        </div>
+                        <!-- <div>
+                        <mat-icon color="primary">photo_album</mat-icon>
+                        <span>Photo/Video</span> 
+                    </div>-->
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card *ngFor="let p of posts" class="posts">
+                    <mat-card-header class="posts-header">
+                        <img alt="{{ p.title}}" mat-card-avatar [src]="p.avatar">
+                        <div class="posts_header_right">
+                          <!--  <span>{{p.time.seconds*1000 | date:'shortTime'}}</span> -->
+                            <h3>{{p.title}}</h3>
+                        </div>
+                    </mat-card-header>
+                    <mat-card-content class="posts_body">
+                        <p>{{p.message}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="feed_right">
+            <div class="right-inside">
+                <img src="./assets/feed.jpg" alt="feed">
+            </div>
+        </div>
+    </div>
+</div>
